@@ -11,6 +11,9 @@ export const ItemIcons: CollectionConfig = {
     disableDuplicate: true,
     useAsTitle: 'alt',
   },
+  access: {
+    read: () => true,
+  },
   upload: {
     staticURL: '/ak-icons',
     staticDir: 'ak-icons',

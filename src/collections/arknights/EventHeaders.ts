@@ -11,6 +11,9 @@ export const EventHeaders: CollectionConfig = {
     disableDuplicate: true,
     useAsTitle: 'alt',
   },
+  access: {
+    read: () => true,
+  },
   upload: {
     staticURL: '/ak-headers',
     staticDir: 'ak-headers',
@@ -19,6 +22,10 @@ export const EventHeaders: CollectionConfig = {
   fields: [
     {
       name: 'alt',
+      type: 'text',
+    },
+    {
+      name: 'topColour',
       type: 'text',
     },
   ],

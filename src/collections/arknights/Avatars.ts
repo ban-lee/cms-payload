@@ -11,6 +11,9 @@ export const Avatars: CollectionConfig = {
     disableDuplicate: true,
     useAsTitle: 'alt',
   },
+  access: {
+    read: () => true,
+  },
   upload: {
     staticURL: '/ak-avatars',
     staticDir: 'ak-avatars',

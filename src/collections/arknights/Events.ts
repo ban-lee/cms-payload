@@ -1,4 +1,5 @@
 import { CollectionConfig } from 'payload/types';
+import { DateSummary } from '../../components/date-summary';
 
 export const Events: CollectionConfig = {
   slug: 'events',
@@ -39,6 +40,31 @@ export const Events: CollectionConfig = {
           type: 'row',
           fields: [
             {
+              name: 'startCn',
+              label: 'Start (CN)',
+              type: 'date',
+              admin: {
+                date: {
+                  displayFormat: 'yyy-MM-dd',
+                },
+              },
+            },
+            {
+              name: 'endCn',
+              label: 'End (CN)',
+              type: 'date',
+              admin: {
+                date: {
+                  displayFormat: 'yyy-MM-dd',
+                },
+              },
+            }
+          ],
+        },
+        {
+          type: 'row',
+          fields: [
+            {
               name: 'start',
               label: 'Start (EN)',
               type: 'date',
@@ -61,31 +87,20 @@ export const Events: CollectionConfig = {
           ],
         },
         {
-          type: 'row',
-          fields: [
-            {
-              name: 'startCn',
-              label: 'Start (CN)',
-              type: 'date',
-              admin: {
-                date: {
-                  displayFormat: 'yyy-MM-dd',
-                },
-              },
+          name: 'estimatedStart',
+          type: 'date',
+          admin: {
+            date: {
+              displayFormat: 'yyy-MM-dd',
             },
-            {
-              name: 'endCn',
-              label: 'End (CN)',
-              type: 'date',
-              admin: {
-                date: {
-                  displayFormat: 'yyy-MM-dd',
-                },
-              },
-            }
-          ],
+          },
         },
       ],
+      admin: {
+        components: {
+          Cell: DateSummary,
+        },
+      },
     },
     {
       name: 'free',
