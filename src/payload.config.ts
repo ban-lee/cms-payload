@@ -7,12 +7,12 @@ import { EventHeaders } from './collections/arknights/EventHeaders';
 import { Events } from './collections/arknights/Events';
 import { ItemIcons } from './collections/arknights/ItemIcons';
 import { Materials } from './collections/arknights/Materials';
-import { Operators } from './collections/arknights/operators';
+import { Operators } from './collections/arknights/Operators';
 import { Skins } from './collections/arknights/Skins';
 import { Users } from './collections/Users';
 
 export default buildConfig({
-  serverURL: 'http://localhost:1337',
+  serverURL: process.env.PAYLOAD_APP_URL,
   admin: {
     user: Users.slug,
   },
@@ -39,7 +39,7 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
   csrf: [
-    "http://localhost:3000",
+    process.env.AK_FRONTEND_URL,
   ],
   cors: "*",
 });
